@@ -39,3 +39,6 @@ mongoose.connection.on("connected", () => {
 
 - to hash password
 - yarn add bcryptjs
+- to token
+- yarn add jsonwebtoken
+- yarn add cookie-parser
