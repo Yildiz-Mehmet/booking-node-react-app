@@ -14,16 +14,35 @@ router.post("/", async (req, res) => {
   }
 });
 // UPDATE
-router.put("/", async (req, res) => {
-  const newHotel = new Hotel(req.body);
+router.put("/:id", async (req, res) => {
   try {
-    const savedHotel = await newHotel.save();
-    res.status(200).json(savedHotel);
+    const updatedHotel = await Hotel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedHotel);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 // DELETE
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedHotel = await Hotel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedHotel);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 // GET
 // GET ALL
 
