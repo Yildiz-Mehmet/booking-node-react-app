@@ -37,5 +37,5 @@ mongoose.connection.on("connected", () => {
 
 ```
 
-- for password security
+- to hash password
 - yarn add bcryptjs
