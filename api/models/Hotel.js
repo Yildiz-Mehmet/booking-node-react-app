@@ -34,4 +34,17 @@ const HotelSchema = new mongoose.Schema({
     min: 0,
     max: 5,
   },
+  rooms: {
+    type: [String],
+  },
+  cheapestPrice: {
+    type: Number,
+    required: true,
+  },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+export default mongoose.model("Hotel", HotelSchema);
