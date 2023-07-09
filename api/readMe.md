@@ -36,3 +36,6 @@ mongoose.connection.on("connected", () => {
 });
 
 ```
+
+- for password security
+- yarn add bcryptjs
