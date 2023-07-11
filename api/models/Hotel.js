@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-const { Schema } = mongoose;
-
 const HotelSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -26,7 +24,8 @@ const HotelSchema = new mongoose.Schema({
     type: [String],
   },
   title: {
-    type: [String],
+    type: String,
+    required: true,
   },
   desc: {
     type: String,
