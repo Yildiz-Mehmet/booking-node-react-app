@@ -9,12 +9,28 @@ const useFetch = (url) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = axios.get(url);
+        const res = await axios.get(url);
         setData(res);
       } catch (err) {
         setError(err);
       }
+      setLoading(false);
     };
     fetchData();
   }, [url]);
+  const reFetch = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(url);
+      setData(res);
+    } catch (err) {
+      setError(err);
+    }
+    setLoading(false);
+  };
+  fetchData();
+
+  return { data, loading, error, reFetch };
 };
+
+export default useFetch;
